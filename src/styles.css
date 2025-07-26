@@ -1,0 +1,271 @@
+@import url('https://fonts.cdnfonts.com/css/eurostile');
+.name {
+  animation: zoomIn 1s ease-in;
+}
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+/* Fade-in on scroll animation */
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+.fade-in-visible {
+  opacity: 1;
+  transform: none;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+
+:root {
+  --bg-dark: #1a1a1a;
+  --bg-accent: #2c2c2c;
+  --neon-blue: #00b7eb;
+  --crimson: #ff3c3c;
+  --text-white: #e0e0e0;
+  --text-dark: #333333;
+  --shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+.app-content {
+  padding-top: 80px; /* header height */
+  padding-bottom: 80px; /* footer height */
+}
+body {
+  margin: 0;
+  font-family: 'Eurostile', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-white);
+  line-height: 1.6;
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--bg-dark);
+  border-bottom: 2px solid var(--neon-blue);
+  box-shadow: var(--shadow);
+  z-index: 1000;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+nav a {
+  color: var(--neon-blue);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: var(--crimson);
+}
+.full-screen {
+  min-width: 100vw;
+  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  /* Remove padding-bottom, use margin-bottom instead for spacing */
+  margin-bottom: 5rem;
+  background: url('/batman-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0; /* Remove padding to avoid constraint */
+  margin: 0;  /* Ensure no margin interferes */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 30px;
+  padding: 2rem 2rem 2rem 4rem;
+  animation: fadeIn 2s ease-in;
+  align-items: flex-start;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 60vh; /* Vertically center content in Opening */
+}
+.name {
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--text-white);
+  text-transform: uppercase;
+  text-shadow: 0 0 10px var(--crimson);
+  margin: 0 0 1.5rem;
+  letter-spacing: 2px;
+}
+.about {
+  font-size: 1.25rem;
+  color: var(--text-white);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  line-height: 1.8;
+  border: 1px solid var(--neon-blue);
+  animation: fadeIn 2.5s ease-in;
+}
+section {
+  padding: 5rem 2rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+section h3 {
+  font-size: 2rem;
+  color: var(--neon-blue);
+  border-bottom: 2px solid var(--crimson);
+  margin-bottom: 1rem;
+}
+.bio {
+  background: linear-gradient(135deg, black, var(--crimson));
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  animation: pulse 5s infinite;
+}
+@keyframes pulse {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.skill-tile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-accent);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--neon-blue);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.skill-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px var(--crimson);
+}
+.skill-tile svg {
+  width: 24px;
+  height: 24px;
+}
+.education-tile {
+  background: var(--bg-accent);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--neon-blue);
+  margin-bottom: 1rem;
+}
+.education-tile img {
+  border: 2px solid red;
+  width: 100px;
+  height: 100px;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+.tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.tree-branch {
+  background: var(--bg-accent);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--neon-blue);
+  width: 100%;
+  max-width: 600px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.tree-branch:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--crimson);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.contact-grid a {
+  display: inline-block;
+  padding: 0.5rem;
+  background: var(--bg-dark);
+  border: 1px solid var(--neon-blue);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--text-white);
+  text-align: center;
+  transition: background 0.3s;
+}
+.contact-grid a:hover {
+  background: var(--crimson);
+}
+.resume {
+  background: var(--bg-accent);
+  padding: 2rem 2rem 4rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--neon-blue);
+  animation: fadeIn 2s ease-in;
+}
+.resume-image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.resume-image {
+  max-width: 100%;
+  width: 800px;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.resume-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--crimson);
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: var(--bg-dark);
+  border-top: 2px solid var(--crimson);
+  text-align: center;
+  padding: 1rem;
+}
+footer p { margin: 0; color: var(--text-gray); }
+@media (max-width: 768px) {
+  .name { font-size: 3rem; }
+  .about { font-size: 1rem; max-width: 100%; padding: 1rem; }
+  nav a { margin: 0 0.5rem; font-size: 0.9rem; }
+  section { padding: 4rem 1rem; }
+  .resume-image { width: 100%; }
+}
